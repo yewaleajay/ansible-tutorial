@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repo index
+    yum:
+      update_cache: yes
+
+  - name: install httpd pkg
+    yum:
+      name: httpd
+      state: latest
+  
+  - name: add php support for httpd
+    yum:
+      name: libapche2-mod-php

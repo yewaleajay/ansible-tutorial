@@ -1,0 +1,9 @@
+---
+- name: deploy vsftpd
+  hosts: 192.168.0.104
+  tasks:
+  - name: install vsftpd
+    yum: name=vsftpd
+  - name: enable vsftpd
+    service: name=vsftpd enabled=true
+...
